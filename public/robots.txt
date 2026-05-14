@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mann-portfolio.vercel.app
+
+# Sitemaps
+Sitemap: https://mann-portfolio.vercel.app/sitemap.xml
