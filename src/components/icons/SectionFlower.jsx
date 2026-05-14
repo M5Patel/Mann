@@ -1,4 +1,4 @@
-import flower from "../../assets/star.png";
+const flower = "/assets/star.png";
 
 export default function SvgSectionFlower({ title, titleId, ...props }) {
     return (

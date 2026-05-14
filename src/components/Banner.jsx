@@ -1,3 +1,5 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -6,7 +8,8 @@ import { useRef } from "react";
 import Button from "@/components/Button";
 import Magnet from "@/components/Magnet";
 import ShinyText from "@/components/ShinyText";
-import img from "../assets/Patel.jpeg";
+
+const img = "/assets/Patel.jpeg";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

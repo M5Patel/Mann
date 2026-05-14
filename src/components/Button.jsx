@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export default function Button({
@@ -62,7 +64,7 @@ export default function Button({
         }
 
         return (
-            <Link className={buttonClasses} to={href || "/"} {...linkRest}>
+            <Link className={buttonClasses} href={href || "/"} {...linkRest}>
                 {innerContent}
             </Link>
         );

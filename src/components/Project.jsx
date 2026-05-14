@@ -1,7 +1,9 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Project({
   index,
@@ -26,7 +28,7 @@ export default function Project({
 
   return (
     <Link
-      to={`/projects/${project.slug}`}
+      href={`/projects/${project.slug}`}
       // Increased vertical padding (py-12 md:py-16) for a more breathable layout
       className="group relative flex border-b border-white/10 py-12 md:py-16 px-4 transition-all duration-500 hover:bg-white/[0.02]"
       onMouseEnter={handleMouseEnter}

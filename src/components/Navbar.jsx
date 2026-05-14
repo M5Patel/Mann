@@ -1,6 +1,8 @@
+"use client";
+
 import { useLenis } from "lenis/react";
 import { MoveUpRight } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
@@ -22,17 +24,17 @@ const MENU_LINKS = [
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const lenis = useLenis();
-    const location = useLocation();
-    const navigate = useNavigate();
+    const pathname = usePathname();
+    const router = useRouter();
 
     const handleClick = (target) => {
-        const isHome = location.pathname === "/" || location.pathname === "";
+        const isHome = pathname === "/";
 
         if (!isHome) {
             if (target === "#") {
-                navigate("/");
+                router.push("/");
             } else {
-                navigate("/");
+                router.push("/");
                 if (lenis)
                     setTimeout(() => {
                         lenis.scrollTo(target, { offset: -30 });

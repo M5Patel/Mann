@@ -1,9 +1,12 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowLeft, Code, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 import { projectsData } from "@/data/projects";
 
@@ -46,7 +49,7 @@ export default function ProjectDetails() {
     <section className="px-6 pt-10 pb-24 md:px-12 bg-zinc-950 text-white min-h-screen">
       <div className="container mx-auto max-w-7xl" ref={containerRef}>
         <Link
-          to="/"
+          href="/"
           className="fade-in-later group mb-12 inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors"
         >
           <ArrowLeft className="transition-transform duration-300 group-hover:-translate-x-2" />
