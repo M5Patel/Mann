@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark">
       <body
         className={`${josefinSans.variable} relative bg-black text-white antialiased select-none font-sans`}
-        style={{ fontFamily: "var(--font-josefin-sans), sans-serif" }}
       >
         <Providers>
           <Navbar />

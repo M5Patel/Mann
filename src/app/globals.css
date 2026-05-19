@@ -11,6 +11,7 @@ body {
 }
 
 @theme {
+  --font-sans: var(--font-josefin-sans), ui-sans-serif, system-ui, sans-serif;
   --color-primary: #d84e2c;
   --color-primary-dark: #6c2716;
   --container-max-width-sm: 640px;
@@ -185,7 +186,7 @@ body {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 

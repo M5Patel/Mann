@@ -3,12 +3,19 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { Briefcase, Code2, Palette } from "lucide-react";
 import { useRef } from "react";
 
 import SectionTitle from "@/components/SectionTitle";
 import { experienceData } from "@/data/experience";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+const experienceIcons = {
+    "exp-1": <Code2 size={20} className="text-primary" />,
+    "exp-2": <Palette size={20} className="text-primary" />,
+    "exp-3": <Briefcase size={20} className="text-primary" />,
+};
 
 export default function Experiences() {
     const containerRef = useRef(null);
@@ -36,45 +43,44 @@ export default function Experiences() {
         { scope: containerRef, dependencies: [experience] }
     );
 
-    useGSAP(
-        () => {
-            if (!experience.length) return;
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "bottom 50%",
-                    end: "bottom 20%",
-                    scrub: 1,
-                },
-            });
-
-            tl.to(containerRef.current, {
-                y: -150,
-                opacity: 0,
-            });
-        },
-        { scope: containerRef, dependencies: [experience] }
-    );
-
     return (
         <section className="py-section" id="my-experience">
             <div className="container" ref={containerRef}>
                 <SectionTitle title="My Experience" />
 
-                <div className="grid gap-14">
-                    {experience.map((item) => (
-                        <div key={item._id} className="experience-item">
-                            <p className="cursor text-xl text-white/80">{item.company}</p>
-                            <p className="cursor mt-3.5 mb-2.5 text-3xl leading-none md:text-4xl">
-                                {item.title}
-                            </p>
-                            <p className="cursor text-lg text-white/80">
-                                {item.startDate} - {item.endDate}
-                            </p>
-                        </div>
-                    ))}
+                    <div className="grid gap-10 md:gap-14">
+                        {experience.map((item) => (
+                            <div
+                                key={item._id}
+                                className="experience-item relative pl-8 border-l border-white/10 hover:border-primary/40 transition-colors duration-500"
+                            >
+                                {/* Timeline dot */}
+                                <div className="absolute -left-[7px] top-1 h-3.5 w-3.5 rounded-full bg-primary/80 border-2 border-black" />
+
+                                <div className="flex items-center gap-3 mb-2">
+                                    {experienceIcons[item._id]}
+                                    <p className="cursor text-base md:text-lg text-white/60 font-medium">
+                                        {item.company}
+                                    </p>
+                                </div>
+
+                                <p className="cursor text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-white mb-2">
+                                    {item.title}
+                                </p>
+
+                                <span className="inline-block text-xs md:text-sm font-medium tracking-wide text-primary/80 bg-primary/10 border border-primary/20 rounded-full px-3 py-1 mb-3">
+                                    {item.duration}
+                                </span>
+
+                                {item.description && (
+                                    <p className="cursor text-sm md:text-base text-white/50 max-w-2xl leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
     );
 }

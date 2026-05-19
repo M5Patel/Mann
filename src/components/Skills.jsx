@@ -96,7 +96,7 @@ export default function Skills() {
                                                 alt={item.name}
                                                 width={40}
                                                 height={40}
-                                                className="max-h-10"
+                                                className={`max-h-10 ${item.invert ? "invert brightness-200" : ""}`}
                                                 loading="lazy"
                                             />
                                         </div>

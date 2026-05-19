@@ -37,11 +37,11 @@ export default function ProjectList() {
   return (
     <section className="py-24" id="projects" ref={containerRef}>
       <div className="container mx-auto px-6 max-w-7xl">
-        <SectionTitle title="SELECTED PROJECTS" />
+        <SectionTitle title="PROJECTS" />
 
-        <div className="mt-12 flex flex-col" ref={projectsRef}>
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8" ref={projectsRef}>
           {projectsData.map((project, index) => (
-            <div key={project._id} className="project-row">
+            <div key={project._id} className={`project-row h-full`}>
               <Project
                 index={index}
                 project={project}

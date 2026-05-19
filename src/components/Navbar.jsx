@@ -1,7 +1,7 @@
 "use client";
 
 import { useLenis } from "lenis/react";
-import { MoveUpRight } from "lucide-react";
+import { MoveUpRight, Github, Linkedin, FileText } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -13,13 +13,15 @@ const COLORS = [
     "bg-blue-500 text-white",
     "bg-teal-500 text-black",
     "bg-indigo-500 text-white",
+    "bg-emerald-500 text-white",
 ];
 
 const MENU_LINKS = [
     { name: "Home", url: "#" },
     { name: "About Me", url: "#about-me" },
     { name: "Experience", url: "#my-experience" },
-    { name: "Projects", url: "#projects" }, 
+    { name: "Projects", url: "#projects" },
+    { name: "Freelance", url: "#freelance-work" },
 ];
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,18 +119,26 @@ export default function Navbar() {
                         <div className="max-lg:order-2">
                             <p className="mb-5 text-white/70 md:mb-8 tracking-widest text-sm">SOCIAL</p>
                             <ul className="space-y-3">
-                                {SOCIAL_LINKS.map((link) => (
+                                {SOCIAL_LINKS.map((link) => {
+                                    const iconMap = {
+                                        github: <Github size={18} className="inline-block mr-2" />,
+                                        linkedin: <Linkedin size={18} className="inline-block mr-2" />,
+                                        resume: <FileText size={18} className="inline-block mr-2" />,
+                                    };
+                                    return (
                                     <li key={link.name}>
                                         <a
                                             href={link.url}
                                             target="_blank"
                                             rel="noreferrer noopener"
-                                            className="text-lg capitalize text-white hover:text-white/80 transition-colors hover:underline underline-offset-4"
+                                            className="text-lg capitalize text-white hover:text-white/80 transition-colors hover:underline underline-offset-4 flex items-center"
                                         >
+                                            {iconMap[link.name.toLowerCase()]}
                                             {link.name}
                                         </a>
                                     </li>
-                                ))}
+                                    );
+                                })}
                             </ul>
                         </div>
                         <div className="">
