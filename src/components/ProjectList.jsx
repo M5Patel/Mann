@@ -19,17 +19,30 @@ export default function ProjectList() {
   useGSAP(
     () => {
       // Staggered fade up for project items
-      gsap.from(".project-row", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 75%", // Triggers when the top of container hits 75% down viewport
+      gsap.fromTo(
+        ".project-row",
+        {
+          y: 60,
+          opacity: 0,
+          scale: 0.95,
+          transformPerspective: 1000,
+          rotationX: 10,
         },
-      });
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          rotationX: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%", // Triggers when the top of container hits 80% down viewport
+            toggleActions: "play none none none",
+          },
+        }
+      );
     },
     { scope: containerRef }
   );

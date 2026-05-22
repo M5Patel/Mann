@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
 import { getAge } from "@/lib/utils";
@@ -64,7 +64,7 @@ export default function AboutMe() {
       {/* Background Glowing Orb Effect */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 opacity-50 blur-[120px]"></div>
 
-      <div className="container relative z-10" ref={container}>
+      <div className="container mx-auto px-6 md:px-8 relative z-10" ref={container}>
       
         <h2 className="slide-up-and-fade mb-12 text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
           <ShinyText

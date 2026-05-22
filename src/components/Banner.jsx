@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
 import Button from "@/components/Button";
@@ -103,7 +103,7 @@ export default function Banner() {
       <div className="bg-glow absolute top-1/3 right-[10%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
       <div
-        className="container relative z-10 flex h-svh items-center justify-center gap-10 max-lg:flex-col max-md:pb-10 lg:justify-between lg:gap-0"
+        className="container mx-auto px-6 md:px-8 relative z-10 flex h-svh items-center justify-center gap-10 max-lg:flex-col max-md:pb-10 lg:justify-between lg:gap-0"
       >
         {/* Left Side: Text and Button */}
         <div className="max-w-[544px] flex-col items-start justify-center pt-20 max-lg:flex md:pt-0">
@@ -178,8 +178,7 @@ export default function Banner() {
                 </div>
                 <div className="wrapper">
                   <span className="animateUp inline-block pl-6">
-                    <span className="text-emerald-400">"Full-Stack Web"</span>, 
-                    <span className="text-emerald-400"> "MERN"</span>, 
+                    <span className="text-emerald-400"> "MERN Stack"</span>, 
                     <span className="text-emerald-400"> "Next.js"</span>
                   </span>
                 </div>

@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Briefcase, Code2, Palette } from "lucide-react";
 import { useRef } from "react";
 
@@ -24,28 +24,32 @@ export default function Experiences() {
     useGSAP(
         () => {
             if (!experience.length) return;
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 60%",
-                    end: "bottom 50%",
-                    toggleActions: "restart none none reverse",
-                    scrub: 1,
+            gsap.fromTo(
+                ".experience-item",
+                {
+                    y: 40,
+                    opacity: 0,
                 },
-            });
-
-            tl.from(".experience-item", {
-                y: 50,
-                opacity: 0,
-                stagger: 0.3,
-            });
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
         },
         { scope: containerRef, dependencies: [experience] }
     );
 
     return (
         <section className="py-section" id="my-experience">
-            <div className="container" ref={containerRef}>
+            <div className="container mx-auto px-6 md:px-8" ref={containerRef}>
                 <SectionTitle title="My Experience" />
 
                     <div className="grid gap-10 md:gap-14">

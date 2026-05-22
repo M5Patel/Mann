@@ -12,14 +12,14 @@ import PageTransition from "@/components/PageTransition";
 export default function Home() {
   return (
     <PageTransition>
-      <div className="container px-8 md:px-0">
+      <div className="w-full">
         <Banner />
         <AboutMe />
         <Skills />
         <Experiences />
         <ProjectList />
+         <Freelance />
         <Achievements />
-        <Freelance />
       </div>
     </PageTransition>
   );

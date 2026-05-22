@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
 import SectionTitle from "@/components/SectionTitle";
@@ -73,7 +73,7 @@ export default function Skills() {
 
     return (
         <section id="my-stack" ref={containerRef}>
-            <div className="container">
+            <div className="container mx-auto px-6 md:px-8">
                 <SectionTitle title="My Stack" />
 
                 <div className="space-y-20">

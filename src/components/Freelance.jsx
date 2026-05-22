@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
 import SectionTitle from "@/components/SectionTitle";
@@ -17,17 +17,30 @@ export default function Freelance() {
     useGSAP(
         () => {
             if (!freelance.length) return;
-            gsap.from(".freelance-item", {
-                y: 50,
-                opacity: 0,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: freelanceRef.current,
-                    start: "top 75%",
+            gsap.fromTo(
+                ".freelance-item",
+                {
+                    y: 60,
+                    opacity: 0,
+                    scale: 0.95,
+                    transformPerspective: 1000,
+                    rotationX: 10,
                 },
-            });
+                {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    rotationX: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: freelanceRef.current,
+                        start: "top 80%",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
         },
         { scope: freelanceRef, dependencies: [freelance] }
     );
@@ -41,7 +54,7 @@ export default function Freelance() {
                     {freelance.map((item, index) => (
                         <div
                             key={item._id}
-                            className={`freelance-item group relative rounded-3xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-md hover:border-primary/40 hover:bg-white/[0.04] transition-all duration-500 overflow-hidden flex flex-col h-full`}
+                            className={`freelance-item group relative rounded-3xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-md hover:border-primary/40 hover:bg-white/[0.04] hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(216,78,44,0.1)] transition-all duration-500 overflow-hidden flex flex-col h-full`}
                         >
                             {/* Decorative background glow */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[60px] pointer-events-none group-hover:bg-primary/20 transition-colors duration-700" />
