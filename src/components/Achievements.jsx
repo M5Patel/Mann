@@ -63,20 +63,25 @@ export default function Achievements() {
                 scrollEl.classList.remove("w-full");
                 scrollEl.classList.add("min-w-max");
 
+                const cardWidth = 340;
+                const gap = 48; // gap-12 is 3rem = 48px
+                const totalCards = achievementsData.length;
+                const totalTranslation = (totalCards - 1) * (cardWidth + gap);
+
                 const pinTimeline = gsap.timeline({
                     scrollTrigger: {
                         trigger: sectionEl,
                         pin: true,
                         scrub: 0.5,
                         start: "top top",
-                        end: () => `+=${Math.max(scrollEl.scrollWidth, 1500)}`,
+                        end: () => `+=${totalTranslation + 400}`,
                         invalidateOnRefresh: true,
                     },
                 });
 
                 // Translate timeline horizontally (spans the entire scroll timeline)
                 pinTimeline.to(scrollEl, {
-                    x: () => -(scrollEl.scrollWidth - window.innerWidth),
+                    x: -totalTranslation,
                     ease: "none",
                 }, 0);
 
@@ -179,7 +184,7 @@ export default function Achievements() {
             <div className="w-full overflow-hidden z-10 relative">
                 <div 
                     ref={scrollRef} 
-                    className="flex flex-row gap-12 overflow-x-auto lg:overflow-hidden pb-12 pt-2 px-12 md:px-24 w-full select-none scrollbar-none relative z-10"
+                    className="flex flex-row gap-12 overflow-x-auto lg:overflow-hidden pb-12 pt-2 px-12 md:px-24 lg:px-[calc(50vw-170px)] w-full select-none scrollbar-none relative z-10"
                 >
                     {achievementsData.map((item, index) => (
                         <div 
