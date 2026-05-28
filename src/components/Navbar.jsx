@@ -1,9 +1,9 @@
 "use client";
 
 import { useLenis } from "lenis/react";
-import { MoveUpRight, Github, Linkedin, FileText } from "lucide-react";
+import { MoveUpRight, Github, Linkedin, FileText, Menu, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -23,11 +23,24 @@ const MENU_LINKS = [
     { name: "Projects", url: "#projects" },
     { name: "Freelance", url: "#freelance-work" },
 ];
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const lenis = useLenis();
     const pathname = usePathname();
     const router = useRouter();
+
+    // Prevent body scroll when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isMenuOpen]);
 
     const handleClick = (target) => {
         const isHome = pathname === "/";
@@ -60,9 +73,10 @@ export default function Navbar() {
             <nav className="fixed top-0 left-0 w-full z-[60] pointer-events-none">
                 <button
                     className={cn(
-                        "group absolute top-5 right-5 z-[60] size-12 cursor-pointer md:right-10 pointer-events-auto"
+                        "group absolute top-4 right-4 z-[60] size-11 md:size-12 cursor-pointer md:right-10 md:top-5 pointer-events-auto rounded-full border border-white/10 bg-black/30 backdrop-blur-md flex items-center justify-center hover:bg-white/10 transition-all duration-300"
                     )}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 >
                     <span
                         className={cn(
@@ -99,8 +113,8 @@ export default function Navbar() {
             {/* 3. MENU DRAWER: z-[50] sits above overlay, below button */}
             <div
                 className={cn(
-                    "fixed top-0 right-0 z-[50] h-svh w-[500px] max-w-[calc(100vw-3rem)] translate-x-full transform gap-y-14 overflow-hidden transition-transform duration-700 cubic-bezier(0.4,0,0.2,1)",
-                    "flex flex-col py-10 lg:justify-center",
+                    "fixed top-0 right-0 z-[50] h-svh w-full sm:w-[500px] sm:max-w-[calc(100vw-3rem)] translate-x-full transform gap-y-10 sm:gap-y-14 overflow-y-auto overflow-x-hidden transition-transform duration-700 cubic-bezier(0.4,0,0.2,1)",
+                    "flex flex-col py-8 sm:py-10 lg:justify-center",
                     { "translate-x-0 shadow-2xl shadow-black/50": isMenuOpen }
                 )}
             >
@@ -114,10 +128,10 @@ export default function Navbar() {
                     )}
                 ></div>
 
-                <div className="mx-8 flex w-full max-w-[300px] grow sm:mx-auto md:items-center">
-                    <div className="flex w-full gap-10 max-lg:flex-col lg:justify-between">
+                <div className="mx-6 sm:mx-8 flex w-full max-w-[300px] grow sm:mx-auto md:items-center">
+                    <div className="flex w-full gap-8 sm:gap-10 max-lg:flex-col lg:justify-between">
                         <div className="max-lg:order-2">
-                            <p className="mb-5 text-white/70 md:mb-8 tracking-widest text-sm">SOCIAL</p>
+                            <p className="mb-4 sm:mb-5 text-white/70 md:mb-8 tracking-widest text-sm">SOCIAL</p>
                             <ul className="space-y-3">
                                 {SOCIAL_LINKS.map((link) => {
                                     const iconMap = {
@@ -131,7 +145,7 @@ export default function Navbar() {
                                             href={link.url}
                                             target="_blank"
                                             rel="noreferrer noopener"
-                                            className="text-lg capitalize text-white hover:text-white/80 transition-colors hover:underline underline-offset-4 flex items-center"
+                                            className="text-base sm:text-lg capitalize text-white hover:text-white/80 transition-colors hover:underline underline-offset-4 flex items-center"
                                         >
                                             {iconMap[link.name.toLowerCase()]}
                                             {link.name}
@@ -142,8 +156,8 @@ export default function Navbar() {
                             </ul>
                         </div>
                         <div className="">
-                            <p className="mb-5 text-white/70 md:mb-8 tracking-widest text-sm">MENU</p>
-                            <ul className="space-y-4">
+                            <p className="mb-4 sm:mb-5 text-white/70 md:mb-8 tracking-widest text-sm">MENU</p>
+                            <ul className="space-y-3 sm:space-y-4">
                                 {MENU_LINKS.map((link, idx) => (
                                     <li key={link.name}>
                                         <button
@@ -151,11 +165,11 @@ export default function Navbar() {
                                                 handleClick(link.url);
                                                 setIsMenuOpen(false);
                                             }}
-                                            className="group flex items-center gap-4 text-2xl font-medium text-white transition-all hover:translate-x-2"
+                                            className="group flex items-center gap-3 sm:gap-4 text-xl sm:text-2xl font-medium text-white transition-all hover:translate-x-2"
                                         >
                                             <span
                                                 className={cn(
-                                                    "flex size-4 items-center justify-center rounded-full bg-white/20 transition-all duration-300 group-hover:scale-[150%]",
+                                                    "flex size-3 sm:size-4 items-center justify-center rounded-full bg-white/20 transition-all duration-300 group-hover:scale-[150%]",
                                                     COLORS[idx]
                                                 )}
                                             >
@@ -173,10 +187,10 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                <div className="mx-8 w-full max-w-[300px] sm:mx-auto">
-                    <p className="mb-4 text-white/70 tracking-widest text-sm">GET IN TOUCH</p>
+                <div className="mx-6 sm:mx-8 w-full max-w-[300px] sm:mx-auto">
+                    <p className="mb-3 sm:mb-4 text-white/70 tracking-widest text-sm">GET IN TOUCH</p>
                     <a 
-                        className="text-lg text-white hover:opacity-80 transition-opacity" 
+                        className="text-base sm:text-lg text-white hover:opacity-80 transition-opacity break-all" 
                         href={`mailto:${GENERAL_INFO.email}`}
                     >
                         {GENERAL_INFO.email}

@@ -41,7 +41,7 @@ export const projectsData = [
 
         name: "Creative Sales Agency — AI-Powered MERN Admin Panel",
 
-        slug: "creative-sales-agency",
+        slug: "creative-sales-agency[ERP]",
 
         description:
             "Developed a full-scale business management system with modules for sales, inventory, billing, clients, vendors, and financial reporting, featuring admin dashboard, authentication, stock management, charts, and PDF/print export.",
@@ -114,4 +114,50 @@ export const projectsData = [
             "Real-time product updates with Supabase",
         ],
     },
+    {
+    _id: "proj-4",
+
+    name: "EduTrack AI — Smart Daily Work Submission & Tracking System",
+
+    slug: "edutrack-ai",
+
+    description:
+        "Built a production-ready full-stack educational management platform that streamlines daily work submissions, automated tracking, faculty reviews, gamification, and real-time notifications for educational institutes using React, Express, Supabase, and Cloudinary.",
+
+    techStack: [
+        "React.js",
+        "Vite",
+        "Node.js",
+        "Express.js",
+        "Supabase",
+        "PostgreSQL",
+        "Zustand",
+        "Tailwind CSS",
+        "Socket.io",
+        "Cloudinary",
+        "Framer Motion",
+        "Recharts",
+        "Node-cron",
+        "Nodemailer",
+    ],
+
+    liveUrl: "https://edutrack-ai-three.vercel.app/",
+
+    sourceCode: "https://github.com/M5Patel/Edutrack-Ai.git",
+
+    features: [
+        "Role-based authentication for Admin, Faculty, and Students",
+        "Daily work submission and tracking system",
+        "Version-controlled file uploads with Cloudinary",
+        "Faculty review and grading workflow",
+        "Real-time notifications using Socket.io",
+        "Gamification system with streaks and achievement badges",
+        "Automated cron jobs for submission monitoring",
+        "Supabase PostgreSQL database integration",
+        "Comprehensive audit logging and activity tracking",
+        "Interactive analytics dashboard with charts",
+        "Responsive and modern UI with Tailwind CSS",
+        "Secure authentication and profile management",
+    ],
+}
 ];

@@ -44,7 +44,7 @@ export default function ScrollButton({ scrollToTop = false, animate = true }) {
         <button
             onClick={handleClick}
             className={cn(
-                "group cursor relative size-30 cursor-pointer opacity-20",
+                "group cursor relative size-16 md:size-20 lg:size-30 cursor-pointer opacity-20 hover:opacity-50 transition-opacity",
                 scrollToTop && "rotate-180"
             )}
         >

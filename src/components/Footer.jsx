@@ -12,7 +12,7 @@ export default function Footer() {
 
                 <a
                     href={`mailto:${GENERAL_INFO.email}`}
-                    className="mt-2 mb-8 inline-block text-2xl sm:text-3xl md:text-4xl font-semibold text-white hover:text-primary transition-colors duration-300 hover:underline underline-offset-4"
+                    className="mt-2 mb-8 inline-block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white hover:text-primary transition-colors duration-300 hover:underline underline-offset-4 break-all sm:break-normal"
                 >
                     {GENERAL_INFO.email}
                 </a>

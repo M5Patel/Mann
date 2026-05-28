@@ -184,7 +184,7 @@ export default function Achievements() {
             <div className="w-full overflow-hidden z-10 relative">
                 <div 
                     ref={scrollRef} 
-                    className="flex flex-row gap-12 overflow-x-auto lg:overflow-hidden pb-12 pt-2 px-12 md:px-24 lg:px-[calc(50vw-170px)] w-full select-none scrollbar-none relative z-10"
+                    className="flex flex-row gap-8 sm:gap-12 overflow-x-auto lg:overflow-hidden pb-12 pt-2 px-6 sm:px-12 md:px-24 lg:px-[calc(50vw-170px)] w-full select-none scrollbar-none relative z-10"
                 >
                     {achievementsData.map((item, index) => (
                         <div 

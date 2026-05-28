@@ -45,7 +45,7 @@ export default function ProjectDetails() {
   }
 
   return (
-    <section className="px-6 pt-10 pb-24 md:px-12 bg-zinc-950 text-white min-h-screen">
+    <section className="px-4 sm:px-6 pt-8 sm:pt-10 pb-20 sm:pb-24 md:px-12 bg-zinc-950 text-white min-h-screen">
       <div className="container mx-auto max-w-5xl" ref={containerRef}>
         <Link
           href="/"
@@ -57,7 +57,7 @@ export default function ProjectDetails() {
 
         {/* Header Section */}
         <div className="fade-in-later flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-10 mb-12">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight">
             {project.name}
           </h1>
 
@@ -68,7 +68,7 @@ export default function ProjectDetails() {
                   href={project.sourceCode}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-white/70 hover:text-white transition-all bg-white/[0.03] border border-white/10 hover:bg-white/10 hover:border-white/30 px-4 py-2.5 rounded-full text-sm font-medium tracking-wide"
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-all bg-white/[0.03] border border-white/10 hover:bg-white/10 hover:border-white/30 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide"
                 >
                   <Github size={18} /> Code
                 </a>
@@ -78,7 +78,7 @@ export default function ProjectDetails() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-black hover:bg-white/90 transition-all bg-white border border-transparent px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide"
+                  className="flex items-center gap-2 text-black hover:bg-white/90 transition-all bg-white border border-transparent px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide"
                 >
                   <ExternalLink size={18} /> Live Demo
                 </a>

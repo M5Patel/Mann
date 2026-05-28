@@ -125,11 +125,11 @@ export default function Freelance() {
   );
 
   return (
-    <section className="pb-20" id="freelance-work">
-      <div className="container mx-auto px-6 max-w-5xl" ref={freelanceRef}>
+    <section className="pb-16 sm:pb-20" id="freelance-work">
+      <div className="container mx-auto px-4 sm:px-6 max-w-5xl" ref={freelanceRef}>
         <SectionTitle title="Freelance Work" />
 
-        <div className="relative mt-16">
+        <div className="relative mt-10 sm:mt-16 ml-4 sm:ml-0">
           {/* Vertical Timeline Track */}
           <div className="absolute left-0 top-0 bottom-0 w-[2px]">
             <div className="absolute inset-0 bg-white/5 origin-top" />

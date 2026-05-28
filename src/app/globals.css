@@ -7,7 +7,14 @@
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  cursor: none;
+}
+
+/* Custom cursor only on non-touch desktops */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  body {
+    cursor: none;
+  }
 }
 
 @theme {
@@ -38,6 +45,24 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: var(--container-max-width-2xl);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 640px) {

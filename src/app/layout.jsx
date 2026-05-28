@@ -37,10 +37,8 @@ export default function RootLayout({ children }) {
           <Preloader />
           <Cursor />
           <ParticleBackground />
-          <div className="relative mx-auto max-w-[1600px]">
-            <div className="right-6 bottom-6 hidden xl:absolute xl:block">
-              <ScrollButton scrollToTop />
-            </div>
+          <div className="fixed right-4 bottom-4 z-30 md:right-6 md:bottom-6">
+            <ScrollButton scrollToTop />
           </div>
           <Signature />
         </Providers>

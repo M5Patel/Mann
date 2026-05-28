@@ -73,18 +73,18 @@ export default function Skills() {
 
     return (
         <section id="my-stack" ref={containerRef}>
-            <div className="container mx-auto px-6 md:px-8">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8">
                 <SectionTitle title="My Stack" />
 
                 <div className="space-y-20">
                     {stack.map(({ type, items }) => (
                         <div className="grid md:grid-cols-12" key={type}>
                             <div className="mb-10 md:col-span-5 md:mb-0">
-                                <p className="slide-up text-5xl leading-none text-white/80 uppercase">
+                                <p className="slide-up text-3xl sm:text-4xl md:text-5xl leading-none text-white/80 uppercase">
                                     {type}
                                 </p>
                             </div>
-                            <div className="flex flex-wrap gap-x-11 gap-y-9 md:col-span-7">
+                            <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-11 gap-y-5 sm:gap-y-7 md:gap-y-9 md:col-span-7">
                                 {items.map((item) => (
                                     <div
                                         className="slide-up flex items-center gap-3.5 leading-none"
@@ -100,7 +100,7 @@ export default function Skills() {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <span className="text-2xl capitalize">{item.name}</span>
+                                        <span className="text-lg sm:text-xl md:text-2xl capitalize">{item.name}</span>
                                     </div>
                                 ))}
                             </div>

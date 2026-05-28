@@ -107,7 +107,7 @@ export default function Banner() {
       >
         {/* Left Side: Text and Button */}
         <div className="max-w-[544px] flex-col items-start justify-center pt-20 max-lg:flex md:pt-0">
-          <h1 className="banner-title slide-up-and-fade text-6xl font-extrabold tracking-tighter leading-[.95] sm:text-[80px]">
+          <h1 className="banner-title slide-up-and-fade text-4xl xs:text-5xl sm:text-6xl font-extrabold tracking-tighter leading-[.95] md:text-[80px]">
             {/* 2027 Style Gradient Text */}
             <span className="bg-gradient-to-r from-primary via-orange-400 to-primary bg-clip-text text-transparent cursor drop-shadow-lg">
               Full-Stack
@@ -116,7 +116,7 @@ export default function Banner() {
             <span className="cursor lg:ml-4 text-gray-100">DEVELOPER</span>
           </h1>
           <ShinyText
-            className="slide-up-and-fade cursor text-lg md:text-xl mt-6 text-gray-300 font-light"
+            className="slide-up-and-fade cursor text-base sm:text-lg md:text-xl mt-4 sm:mt-6 text-gray-300 font-light"
             text="
             Hi ! I'm Mann Patel. A Full-Stack Developer with hands-on experience through
             building high-performance, scalable, and responsive web solutions.
@@ -125,7 +125,7 @@ export default function Banner() {
           <Button
             as="button"
             variant="primary"
-            className="banner-Button slide-up-and-fade cursor mt-9 rounded-full px-8 py-4 font-semibold text-white shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.8)] hover:bg-white hover:text-black"
+            className="banner-Button slide-up-and-fade cursor mt-6 sm:mt-9 rounded-full px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.8)] hover:bg-white hover:text-black"
             onClick={handleScrollToProjects}
           >
             View Projects
@@ -136,7 +136,7 @@ export default function Banner() {
         <div className="flex flex-col items-center lg:items-end gap-10 cursor">
           {/* FUTURISTIC PROFILE IMAGE WRAPPER */}
           {/* Removed grayscale, added glassmorphic ring, neon shadow, and hover scale */}
-          <div className="profile-img relative w-56 h-56 md:w-[320px] md:h-[320px] rounded-full p-2 bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-[0_0_60px_-15px_rgba(255,255,255,0.15)] group">
+          <div className="profile-img relative w-44 h-44 sm:w-56 sm:h-56 md:w-[320px] md:h-[320px] rounded-full p-2 bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-[0_0_60px_-15px_rgba(255,255,255,0.15)] group">
             <div className="w-full h-full rounded-full overflow-hidden relative">
               <img
                 src={img}
