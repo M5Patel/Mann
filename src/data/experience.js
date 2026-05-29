@@ -117,4 +117,35 @@ export const freelanceData = [
       "Deployed contact and service inquiry forms to channel sales leads directly to the administration."
     ]
   },
+  {
+  _id: "fl-5",
+
+  client: "Sparcle Event",
+
+  title: "Premium Event Planning Platform",
+
+  liveLink: "https://sparcle-events.vercel.app/",
+
+  techStack: [
+    "Next.js 16",
+    "Tailwind CSS",
+    "Framer Motion",
+    "GSAP",
+    "Three.js",
+  ],
+
+  description:
+    "Designed and developed a premium luxury event-planning platform featuring immersive animations, modern glassmorphism UI, AI-powered event assistance, event package exploration, theme recommendations, and responsive user experiences. Built using Next.js 16 with high-performance frontend architecture and deployed on Vercel.",
+
+  features: [
+    "Developed a luxury event management website with modern gold-themed glassmorphism design.",
+    "Integrated AI-powered event assistant to help users explore event packages, budgets, and themes.",
+    "Implemented advanced animations and smooth transitions using Framer Motion and GSAP.",
+    "Created immersive 3D visual experiences using React Three Fiber and Drei.",
+    "Optimized SEO structure and performance using Next.js 16 and TurboPack.",
+    "Implemented Lenis smooth scrolling for a premium browsing experience.",
+    "Built fully responsive layouts for desktop, tablet, and mobile devices.",
+    "Successfully deployed and optimized on Vercel for fast global delivery."
+  ]
+}
 ];
