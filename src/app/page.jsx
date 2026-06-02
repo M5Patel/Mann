@@ -7,6 +7,7 @@ import Experiences from "@/components/Experiences";
 import ProjectList from "@/components/ProjectList";
 import Achievements from "@/components/Achievements";
 import Freelance from "@/components/Freelance";
+import Reviews from "@/components/Reviews";
 import PageTransition from "@/components/PageTransition";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <ProjectList />
          <Freelance />
         <Achievements />
+        <Reviews />
       </div>
     </PageTransition>
   );

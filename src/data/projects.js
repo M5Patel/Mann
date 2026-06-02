@@ -41,7 +41,7 @@ export const projectsData = [
 
         name: "Creative Sales Agency — AI-Powered MERN Admin Panel",
 
-        slug: "creative-sales-agency[ERP]",
+        slug: "creative-sales-agency-erp",
 
         description:
             "Developed a full-scale business management system with modules for sales, inventory, billing, clients, vendors, and financial reporting, featuring admin dashboard, authentication, stock management, charts, and PDF/print export.",
@@ -55,7 +55,7 @@ export const projectsData = [
             "Framer Motion",
         ],
 
-        liveUrl: "",
+        liveUrl: "https://creative-sales-agency.vercel.app/",
 
         sourceCode: "https://github.com/M5Patel/Creative-sales-Agency.git",
 
