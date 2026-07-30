@@ -20,7 +20,7 @@ export default function Footer() {
                 {/* Social icons */}
                 <div className="flex items-center justify-center gap-6 mb-8">
                     <a
-                        href="https://github.com/M5Patel"
+                        href="https://github.com/mp0408"
                         target="_blank"
                         rel="noreferrer noopener"
                         className="group flex items-center justify-center h-12 w-12 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 transition-all duration-300"
@@ -60,7 +60,7 @@ export default function Footer() {
                 <p className="text-sm text-white/40">
                     © {new Date().getFullYear()}{" "}
                     <a
-                        href="https://github.com/M5Patel"
+                        href="https://github.com/mp0408"
                         target="_blank"
                         rel="noreferrer noopener"
                         className="text-white/60 hover:text-white hover:underline underline-offset-4 transition-colors"

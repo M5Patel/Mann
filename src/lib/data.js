@@ -5,7 +5,7 @@ export const GENERAL_INFO = {
 };
 
 export const SOCIAL_LINKS = [
-    { name: "github", url: "https://github.com/M5Patel" },
+    { name: "github", url: "https://github.com/mp0408" },
     { name: "linkedin", url: "https://www.linkedin.com/in/mann-patel-581539258" },
     { name: "resume", url: GENERAL_INFO.resume },
 ];

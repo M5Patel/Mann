@@ -22,7 +22,7 @@ export const projectsData = [
 
         liveUrl: "https://aurex-teal.vercel.app",
 
-        sourceCode: "https://github.com/M5Patel/Aurex.git",
+        sourceCode: "https://github.com/mp0408/Aurex.git",
 
         features: [
             "Full-stack luxury watch e-commerce platform",
@@ -57,7 +57,7 @@ export const projectsData = [
 
         liveUrl: "https://creative-sales-agency.vercel.app/",
 
-        sourceCode: "https://github.com/M5Patel/Creative-sales-Agency.git",
+        sourceCode: "https://github.com/mp0408/Creative-sales-Agency.git",
 
         features: [
             "Business management dashboard",
@@ -99,7 +99,7 @@ export const projectsData = [
 
         liveUrl: "https://nexus-green-iota.vercel.app",
 
-        sourceCode: "https://github.com/M5Patel/Nexus.git",
+        sourceCode: "https://github.com/mp0408/Nexus.git",
 
         features: [
             "Gaming e-commerce platform",
@@ -143,7 +143,7 @@ export const projectsData = [
 
     liveUrl: "https://edutrack-ai-three.vercel.app/",
 
-    sourceCode: "https://github.com/M5Patel/Edutrack-Ai.git",
+    sourceCode: "https://github.com/mp0408/Edutrack-Ai.git",
 
     features: [
         "Role-based authentication for Admin, Faculty, and Students",
