@@ -10,20 +10,12 @@ export const experienceData = [
     },
     {
         _id: "exp-2",
-        company: "BUILT-UP Technologies",
+        company: "Creative Web Infotech",
         title: "UI/UX & Full-Stack Developer Intern",
         duration: "6-Month Internship",
         description:
             "Completed a 6-month internship in UI/UX Design and Full-Stack Development with practical experience in Figma, MERN Stack, and modern web technologies.",
-    },
-    {
-        _id: "exp-3",
-        company: "Creative Design and Multimedia Institute",
-        title: "Full-Stack Developer Trainee",
-        duration: "1+ Year Professional Training",
-        description:
-            "Completed 1+ year of professional training in Full-Stack Development, specializing in the MERN Stack, scalable web application architecture, and AI-assisted development tools.",
-    },
+    }
 ];
 
 // Freelance work data
